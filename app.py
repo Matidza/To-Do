@@ -12,7 +12,7 @@ app = Flask(__name__)
 # creating DB instance
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:1969@localhost/users'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///Todo.db'
-app.config['SQLALCHEMY_TRACK_MIDIFICATIONS'] = False
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] =  False
 app.config['SECRET_KEY'] = 'dsjvcnw4%*&TBVhv@$#3'
 
 db = SQLAlchemy(app)
