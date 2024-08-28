@@ -15,9 +15,9 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///Todo.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] =  False
 app.config['SECRET_KEY'] = 'dsjvcnw4%*&TBVhv@$#3'
 
-db = SQLAlchemy(app)
+db = SQLAlchemy(app, track_modifications=False)
 #migrate = Migrate(app, db)
-
+db.track_modifications=False
 # Creating ( C ) Models ~ Row of data
 class Mytodo(db.Model):
     id = db.Column(db.Integer, unique=True, primary_key=True, autoincrement=True)
