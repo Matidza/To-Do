@@ -28,7 +28,8 @@ class Mytodo(db.Model):
     def __repr__(self):
         return self.id
 
-
+with app.app_context():
+    db.create_all()
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -81,8 +82,7 @@ def update(id):
 
 
 if __name__ == '__main__':
-    with app.app_context():
-        db.create_all()
+    
     app.run(debug=False)
 
 
